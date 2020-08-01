@@ -2,31 +2,21 @@
 
 import React, { Component } from 'react';
 import logo from './logo.svg';
+import { BrowserRouter, Route } from 'react-router-dom';
 import './App.css';
-import axios from 'axios';
+
 import illustration_1 from './Assets/Images/Illustration1.png';
 import illustration_2 from './Assets/Images/Illustration2.png';
-import PostRecipe from './Components/PostRecipe/PostRecipe';
-import RecipeSectionHeading from './Components/RecipeSectionHeading/RecipeSectionHeading';
-import SearchRecipe from './Components/SearchRecipe/SearchRecipe';
+import Container from './Components/Container';
+import FullRecipe from './Components/FullRecipe/FullRecipe';
 class App extends Component {
-	state = {
-		recipeList: null,
-	};
-	componentDidMount() {
-		axios
-			.get('http://starlord.hackerearth.com/recipe')
-			.then((res) => {
-				console.log(res.data);
-				this.setState({
-					recipeList: res.data,
-				});
-			})
-			.catch((err) => console.log(err));
-	}
 	render() {
 		return (
 			<div className='App'>
+				<BrowserRouter>
+					<Route exact path='/:id' component={FullRecipe} />
+					<Route exact path='/' component={() => <Container />} />
+				</BrowserRouter>
 				<img
 					src={illustration_2}
 					alt='Bg_Image'
@@ -37,11 +27,6 @@ class App extends Component {
 					alt='Bg_Image'
 					className='bg_bottom_left-image'
 				/>
-				<SearchRecipe />
-				<RecipeSectionHeading />
-				<div className='recipe_list_container'>
-					<PostRecipe recipeList={this.state.recipeList} />
-				</div>
 			</div>
 		);
 	}

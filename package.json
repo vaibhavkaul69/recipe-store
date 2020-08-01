@@ -2,11 +2,12 @@
 	"name": "recipe-store",
 	"version": "0.1.0",
 	"private": true,
-	"homepage": "https://vaibhavkaul69.github.io/recipe-store",
+	"homepage": " https://vaibhavkaul69.github.io/recipe-store/",
 	"dependencies": {
 		"axios": "^0.19.2",
 		"react": "^16.13.1",
 		"react-dom": "^16.13.1",
+		"react-router-dom": "^5.2.0",
 		"react-scripts": "1.1.5"
 	},
 	"scripts": {

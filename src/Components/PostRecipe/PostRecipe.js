@@ -2,6 +2,8 @@
 
 import React from 'react';
 import './PostRecipe.css';
+import { Link } from 'react-router-dom';
+import Loader from '../Loader/Loader';
 import img1 from '../../Assets/Images/Img1.jpg';
 import img2 from '../../Assets/Images/Img2.jpg';
 import img3 from '../../Assets/Images/Img3.jpg';
@@ -20,6 +22,10 @@ function PostRecipe({ recipeList }) {
 		return recipeList.map((recipeItem) => {
 			return (
 				<div className='recipe_item_list' key={recipeItem.id}>
+					<div className='overlay'>
+						<Link to='/12'>View More</Link>
+						<Link to='/12'>Quick View</Link>
+					</div>
 					<h3 className='recipe_list_category'>In {recipeItem.category}</h3>
 					<img
 						src={recipeItem.image}
@@ -48,7 +54,7 @@ function PostRecipe({ recipeList }) {
 		});
 	} else {
 		console.log(recipeList);
-		return <div>Loading....</div>;
+		return <Loader />;
 	}
 }
 export default PostRecipe;

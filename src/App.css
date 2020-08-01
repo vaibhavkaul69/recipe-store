@@ -20,6 +20,9 @@
 	left: -80px;
 	bottom: -140px;
 }
+.main-content {
+	width: 100%;
+}
 
 .recipe_list_container {
 	width: 100%;
