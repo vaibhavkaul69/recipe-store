@@ -23,8 +23,8 @@ function PostRecipe({ recipeList }) {
 			return (
 				<div className='recipe_item_list' key={recipeItem.id}>
 					<div className='overlay'>
-						<Link to='/12'>View More</Link>
-						<Link to='/12'>Quick View</Link>
+						<Link to='/'>View More</Link>
+						<Link to={'/' + recipeItem.id}>Quick View</Link>
 					</div>
 					<h3 className='recipe_list_category'>In {recipeItem.category}</h3>
 					<img
