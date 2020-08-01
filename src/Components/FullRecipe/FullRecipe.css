@@ -6,14 +6,13 @@
 	position: relative;
 	top: 20px;
 	font-family: metro-light;
+	cursor: pointer;
 }
 .full_description_column {
 	position: relative;
 	top: 100px;
-	display: flex;
-	flex-wrap: wrap;
-	align-content: center;
-	justify-content: flex-end;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
 }
 
 .image_overlay {
@@ -44,7 +43,10 @@
 	color: #ffffff;
 	font-family: metro-light;
 }
-
+.column_1,
+.column_2 {
+	padding: 20px;
+}
 .column_1 > h2 {
 	font-family: metro-bold;
 }
@@ -157,6 +159,11 @@
 }
 button:focus {
 	outline: none;
+}
+@media only screen and (max-width: 1000px) {
+	.full_description_column {
+		grid-template-columns: repeat(1, 1fr);
+	}
 }
 @media only screen and (max-width: 400px) {
 	.image_overlay {

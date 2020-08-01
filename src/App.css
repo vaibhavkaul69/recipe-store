@@ -5,7 +5,7 @@
 	justify-content: center;
 	align-items: center;
 	min-height: 50vh;
-	width: 60%;
+	width: 80%;
 	position: relative;
 	margin: 10px auto;
 }
@@ -13,6 +13,16 @@
 	position: fixed;
 	right: -100px;
 	top: -170px;
+}
+.left_center {
+	position: fixed;
+	top: 10%;
+	left: 30px;
+}
+.right_bottom {
+	position: fixed;
+	right: 0;
+	bottom: 10px;
 }
 a {
 	color: #000;
